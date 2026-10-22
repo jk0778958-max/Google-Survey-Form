@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurveyCraft - Survey Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="#" class="logo">SurveyCraft</a>
+        <span class="tagline">Create. Share. Discover.</span>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1>Build your survey</h1>
+            <p>Create questions and collect meaningful feedback.</p>
+        </section>
+
+        <form id="surveyForm">
+
+            <section class="card survey-info">
+                <label for="surveyTitle">Survey title</label>
+                <input
+                    type="text"
+                    id="surveyTitle"
+                    placeholder="Enter your survey title"
+                    value="Student Feedback Survey"
+                    required
+                >
+
+                <label for="surveyDescription">Description</label>
+                <textarea
+                    id="surveyDescription"
+                    placeholder="Explain the purpose of your survey..."
+                    rows="3"
+                >We value your feedback. Please answer the following questions.</textarea>
+            </section>
+
+            <section id="questionsContainer" aria-label="Survey questions"></section>
+
+            <div class="actions editor-actions" id="editorActions">
+                <button type="button" id="addQuestionBtn" class="btn btn-secondary">
+                    + Add Question
+                </button>
+
+                <button type="button" id="previewBtn" class="btn btn-primary">
+                    Preview Survey
+                </button>
+            </div>
+
+            <div class="actions preview-actions hidden" id="previewActions">
+                <button type="button" id="backToEditBtn" class="btn btn-secondary">
+                    Back to Editor
+                </button>
+
+                <button type="submit" class="btn btn-primary">
+                    Submit Survey
+                </button>
+            </div>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+
+        </form>
+
+        <footer>
+            <p>SurveyCraft &copy; 2026 · Your feedback matters</p>
+        </footer>
+    </main>
+
+</body>
+</html>

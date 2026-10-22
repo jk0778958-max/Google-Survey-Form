@@ -1,0 +1,372 @@
+
+/* 1. Global settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #673ab7;
+    --primary-dark: #512da8;
+    --background: #f5f3fa;
+    --surface: #ffffff;
+    --text: #24212d;
+    --muted: #716c7c;
+    --border: #e1dce9;
+    --danger: #c62828;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* 2. Header */
+.topbar {
+    background: var(--surface);
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tagline {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* 3. Main content */
+.container {
+    width: min(100% - 32px, 760px);
+    margin: 36px auto;
+}
+
+.intro {
+    margin-bottom: 24px;
+}
+
+.intro h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.intro p {
+    color: var(--muted);
+}
+
+/* 4. Cards */
+.card,
+.question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 12px rgba(30, 20, 50, 0.04);
+}
+
+.survey-info {
+    border-top: 5px solid var(--primary);
+}
+
+/* 5. Labels and inputs */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #c7b3f3;
+    border-color: var(--primary);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--primary);
+}
+
+/* 6. Question cards */
+.question-card {
+    border-left: 4px solid var(--primary);
+}
+
+.question-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.question-heading h2 {
+    font-size: 18px;
+}
+
+.question-card .question-title {
+    margin-bottom: 16px;
+}
+
+.field-label {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.option-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.option-row input[type="text"] {
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.option-row label {
+    margin: 0;
+    font-weight: normal;
+}
+
+.option-row .remove-option {
+    flex-shrink: 0;
+}
+
+.required-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 18px;
+}
+
+.question-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+/* 7. Buttons */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.btn {
+    border: none;
+    border-radius: 7px;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: #ebe5f7;
+    color: var(--primary-dark);
+}
+
+.btn-secondary:hover {
+    background: #ded3f2;
+}
+
+.btn-danger {
+    background: #fff0f0;
+    color: var(--danger);
+}
+
+.btn-small {
+    padding: 7px 10px;
+    font-size: 13px;
+}
+
+/* 8. Preview mode and messages */
+.hidden {
+    display: none !important;
+}
+
+.preview-note {
+    background: #eee8fa;
+    padding: 12px;
+    border-radius: 7px;
+    margin-bottom: 18px;
+    color: var(--primary-dark);
+}
+
+.message {
+    margin: 12px 0;
+    font-weight: 600;
+}
+
+.message.error {
+    color: var(--danger);
+}
+
+.message.success {
+    color: #24713b;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 20px 0;
+}
+
+/* 9. Mobile responsiveness */
+@media (max-width: 600px) {
+    .topbar {
+        padding: 16px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .container {
+        margin: 24px auto;
+    }
+
+    .intro h1 {
+        font-size: 25px;
+    }
+
+    .card,
+    .question-card {
+        padding: 18px;
+    }
+
+    .actions .btn {
+        flex: 1;
+    }
+
+    .question-heading {
+        align-items: flex-start;
+    }
+}
+
+/* UI refinement */
+
+/* Slightly reduce the overall vertical spacing */
+.container {
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+/* Make the introduction more compact */
+.intro {
+    margin-bottom: 20px;
+}
+
+.intro h1 {
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+/* Reduce card padding and spacing */
+.card,
+.question-card {
+    padding: 22px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+}
+
+/* Give the question heading a clearer hierarchy */
+.question-heading {
+    margin-bottom: 18px;
+}
+
+.question-heading h2 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* Improve input readability */
+input[type="text"],
+textarea,
+select {
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Make keyboard focus easier to see */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible {
+    outline: 3px solid #cbb8f3;
+    outline-offset: 2px;
+}
+
+/* Give action buttons consistent dimensions */
+.btn {
+    min-height: 42px;
+}
+
+/* Keep the layout comfortable on small screens */
+@media (max-width: 600px) {
+    .card,
+    .question-card {
+        padding: 16px;
+    }
+
+    .intro h1 {
+        font-size: 24px;
+    }
+
+    .tagline {
+        font-size: 12px;
+    }
+}
